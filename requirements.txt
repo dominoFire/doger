@@ -1,0 +1,5 @@
+pandas >= 0.16.0
+scikit-learn
+click
+joblib
+scipy >= 0.15.0
