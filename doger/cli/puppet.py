@@ -7,6 +7,7 @@ import doger.csv2pk as csv2pk_converter
 import doger.split_predictor_response as split_predictor_response
 import doger.split_train_test as split_train_test
 import numpy as np
+import doger.merge_results as merger
 import os
 
 
@@ -85,3 +86,13 @@ def csv2pk(predictors_csv, response_csv):
     :return: None
     """
     csv2pk_converter.convert_csv2pk(predictors_csv, response_csv)
+
+@cli.command()
+@click.argument('folder_path', type=click.Path(exists=True, file_okay=False))
+def merge(folder_path):
+    """
+    Merge results of grid search
+    :param folder_path:
+    :return:
+    """
+    merger.merge_results(folder_path)

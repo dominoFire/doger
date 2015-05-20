@@ -268,7 +268,7 @@ def train_test_cut(params, X_train, y_train, classifier_class, X_test, y_test, c
 def grid_search(X_train, y_train, X_test, y_test, classifier_class, cut_list, **params_grid):
     params_col = list(ParameterGrid(params_grid))
     results = []
-    out_filename = os.path.join(out_folder, '{0} gridSearch.csv'.format(classifier_class.__name__))
+    out_filename = os.path.join(out_folder, '{0}_gridSearch.csv'.format(classifier_class.__name__))
 
     res = Parallel(n_jobs=1)(delayed(train_test_cut)
                              (pars, X_train, y_train, classifier_class, X_test, y_test, cut_list)

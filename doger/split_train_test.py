@@ -19,7 +19,7 @@ def split_train_test(csv_path, train_test_ratio):
 
     # Slice me nice
     # http://stackoverflow.com/questions/24147278/how-do-i-create-test-and-train-samples-from-one-dataframe-with-pandas
-    msk = np.random.rand(len(table)) < 0.8
+    msk = np.random.rand(len(table)) <= train_test_ratio
     train = table[msk]
     test = table[~msk]
 

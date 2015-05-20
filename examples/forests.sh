@@ -47,3 +47,5 @@ doger gridsearch \
     labeled_test_predictors.pk labeled_test_response.pk \
     gridsearch_bnb_config.py \
     obj out
+
+doger merge out
